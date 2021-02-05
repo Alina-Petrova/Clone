@@ -40,8 +40,12 @@ public class Point implements Cloneable{
     }
     
     @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone(); 
+    protected Point clone() throws CloneNotSupportedException {
+        try {
+           return (Point)super.clone(); 
+        } catch(CloneNotSupportedException ex) {
+            return null;
+        }   
     }
 
     @Override

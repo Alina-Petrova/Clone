@@ -54,10 +54,21 @@ public class Rectangle implements Cloneable{
         return super.clone(); 
     }*/
     
- @Override
+ /*@Override
     public Object clone() throws CloneNotSupportedException {
         Rectangle clone = (Rectangle) super.clone();
         clone.setSxd((Point) this.getSxd().clone());
         return clone; 
+    }*/
+    @Override
+    public Rectangle clone() {
+        try {
+            Rectangle clone = (Rectangle) super.clone();
+            clone.sxd = (Point)sxd.clone();
+            //clone.setSxd((Point) this.getSxd().clone());
+            return clone; 
+        } catch(CloneNotSupportedException ex) {
+            return null;
+        }    
     }
 }
